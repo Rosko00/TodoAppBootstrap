@@ -1,14 +1,14 @@
 package cz.itnetwork.todoapp.controller;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.stereotype. Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation. GetMapping;
 
 @Controller
-public class HelooWorldController {
-
+class HelloWorldController {
     @GetMapping("/")
-    public @ResponseBody String helloWorld() {
-        return "Hello, World";
+    public String helloWorld(Model model) {
+// predávame do šablóny "premennú" name s hodnotou "ITnetwork"
+        model.addAttribute("name", "ITnetwork");
+        return "helloworld";
     }
 }
